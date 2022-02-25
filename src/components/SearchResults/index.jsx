@@ -1,7 +1,8 @@
 /* eslint-disable jsx-a11y/alt-text */
-import React, { useEffect, useState } from "react";
-import { Space, Card, Popover } from 'antd';
+import React, { useState } from "react";
+import { Space, Card } from 'antd';
 import 'antd/dist/antd.css';
+import ModalInfo from '../ModalInfo'
 
 import "./styles.css";
 
@@ -59,12 +60,6 @@ const SearchResults = (props) => {
     return info;
   }
 
-  const add = (
-    <div>
-      <p>Teste</p>
-    </div>
-  )
-
   return (
     <div>
       <Space direction="vertical">
@@ -111,7 +106,7 @@ const SearchResults = (props) => {
                       movie.overview :
                       movie.known_for_department}</div>
                   </div>
-
+                  <ModalInfo adicionais={adicionais} />
                 </Card>
               </li>
             ))}
